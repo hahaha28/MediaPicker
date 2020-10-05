@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="MediaPickerTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/mediaPickerColorPrimary</item>
+        <item name="colorPrimaryDark">@color/mediaPickerColorPrimaryDark</item>
+        <item name="colorAccent">@color/mediaPickerColorAccent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi = "23">true</item>
+
+    </style>
+
+    <style name="MediaPickerShowImageTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/media_picker_black</item>
+        <item name="colorPrimaryDark">@color/media_picker_black</item>
+        <item name="colorAccent">@color/mediaPickerColorAccent</item>
+    </style>
+
+</resources>

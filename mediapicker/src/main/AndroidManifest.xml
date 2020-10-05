@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fun.inaction.mediapicker">
+
+    <application>
+        <activity android:name=".view.ShowImageActivity"
+            android:theme="@style/MediaPickerShowImageTheme"/>
+        <activity
+            android:name=".view.ChooseAlbumActivity"
+            android:label="选择相册"
+            android:theme="@style/MediaPickerTheme" />
+        <activity
+            android:name=".view.ImagePickerActivity"
+            android:theme="@style/MediaPickerTheme" />
+    </application>
+
+</manifest>
