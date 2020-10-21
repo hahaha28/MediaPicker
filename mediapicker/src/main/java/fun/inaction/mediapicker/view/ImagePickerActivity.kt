@@ -1,5 +1,6 @@
 package `fun`.inaction.mediapicker.view
 
+import `fun`.inaction.centertitletoolbar.CenterTitleToolbar
 import `fun`.inaction.mediapicker.R
 import `fun`.inaction.mediapicker.view.adapter.ImageRVAdapter
 import `fun`.inaction.mediapicker.core.ImageHelper
@@ -33,10 +34,7 @@ class ImagePickerActivity : AppCompatActivity() {
      */
     private var limit = 0
 
-    /**
-     * 标题的TextView
-     */
-    private lateinit var title: TextView
+    private lateinit var toolbar:CenterTitleToolbar
 
     /**
      * 启动选择相册的启动码
@@ -48,14 +46,13 @@ class ImagePickerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_image_picker)
 
         // 设置Toolbar
-        val toolbar: Toolbar = findViewById(R.id.appbar)
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+//        supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar.setNavigationIcon(R.drawable.ic_return)
         toolbar.setNavigationOnClickListener { finish() }
         // 设置标题
-        title = toolbar.findViewById<TextView>(R.id.title)
-        title.text = "最近"
+        toolbar.setCenterTitle("最近")
 
         // 获取Intent传来的数据，照片选取数量
         limit = intent.getIntExtra(INTENT_KEY,0)
@@ -166,7 +163,7 @@ class ImagePickerActivity : AppCompatActivity() {
                     .imageList.forEach {
                         list.add(it.uri)
                     }
-                title.text = "最近"
+                toolbar.setCenterTitle("最近")
             }
             else -> {
                 imageHelper
@@ -174,7 +171,7 @@ class ImagePickerActivity : AppCompatActivity() {
                     .imageList.forEach {
                         list.add(it.uri)
                     }
-                title.text = imageHelper.albums[index - 1].name
+                toolbar.setCenterTitle(imageHelper.albums[index - 1].name)
             }
         }
         // 更新数据

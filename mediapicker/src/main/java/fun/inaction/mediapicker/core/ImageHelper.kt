@@ -52,6 +52,7 @@ class ImageHelper(private val context: Context) {
                 imageList.add(image)
                 toAlbum(image)
             }
+            cursor.close()
         }
     }
 

@@ -28,15 +28,15 @@ class MainActivity : AppCompatActivity() {
                 .runtime()
                 .permission(Permission.READ_EXTERNAL_STORAGE)
                 .onGranted {
-                    MediaPicker.pickImages(this,{boolean,list->
-                        if(boolean){
+                    MediaPicker.pickImages(this) { boolean, list ->
+                        if (boolean) {
                             list?.forEach {
-                                Log.e("MyDebug",it.toString())
+                                Log.e("MyDebug", it.toString())
                             }
-                        }else{
-                            Log.e("MyDebug","no return")
+                        } else {
+                            Log.e("MyDebug", "no return")
                         }
-                    })
+                    }
 
                 }
                 .start()

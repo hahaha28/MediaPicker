@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".view.ChooseAlbumActivity">
 
-    <include
-        android:id="@+id/actionBar"
-        layout="@layout/toolbar"
+    <fun.inaction.centertitletoolbar.CenterTitleToolbar
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:centerTitle="选择相册"
+        app:centerTitleTextAppearance="@style/ToolbarTitleStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +24,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

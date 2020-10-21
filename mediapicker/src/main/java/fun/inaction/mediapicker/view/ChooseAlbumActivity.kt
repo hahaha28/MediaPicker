@@ -15,24 +15,18 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ChooseAlbumActivity : AppCompatActivity() {
 
-    /**
-     * 标题的TextView
-     */
-    private lateinit var title: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_album)
 
         // 设置 Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.actionBar)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+//        supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar.setNavigationIcon(R.drawable.ic_return)
         toolbar.setNavigationOnClickListener { finish() }
-        // 设置标题
-        title = toolbar.findViewById<TextView>(R.id.title)
-        title.text = "选择相册"
+
 
         val list = intent.getParcelableArrayListExtra<AlbumRVAdapter.Album>(DATA_KEY)
 
